@@ -1,0 +1,96 @@
+<!-- gallery.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Photo Memories</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📸</text></svg>">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, sans-serif;
+            background: linear-gradient(135deg, #ffe0f0, #ffcce2);
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: #4d2b3a;
+            cursor: url('images/pug-cursor-32.png'), auto;
+        }
+
+        h1 {
+            font-size: 36px;
+            font-weight: 900;
+            color: #ff1493;
+            margin-bottom: 20px;
+            text-shadow: 1px 1px #ffc0cb;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+            gap: 12px;
+            max-width: 1100px;
+            width: 100%;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 12px;
+            transition: transform 0.4s ease;
+            cursor: zoom-in;
+        }
+
+        .gallery img:hover {
+            transform: scale(3);
+            object-fit: contain;
+            z-index: 2;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+<h1>📸 Recent Memories</h1>
+<div class="gallery">
+    <img src="images/Messenger_creation_bd94b3cb-ce93-4ec7-8af3-a7cd814ccfc0~4.jpeg" alt="">
+    <img src="images/PXL_20240222_184131798.PORTRAIT.jpg" alt="">
+    <img src="images/PXL_20240406_105132220.PORTRAIT.ORIGINAL.jpg" alt="">
+    <img src="images/PXL_20240505_184709541.jpg" alt="">
+    <img src="images/PXL_20240507_113749561.MP.jpg" alt="">
+    <img src="images/PXL_20240519_161019775.PORTRAIT.jpg" alt="">
+    <img src="images/PXL_20240721_213528456.NIGHT.jpg" alt="">
+    <img src="images/PXL_20240818_065621422.PORTRAIT.jpg" alt="">
+    <img src="images/PXL_20241006_205342492.jpg" alt="">
+    <img src="images/PXL_20241110_093156261.PORTRAIT.jpg" alt="">
+    <img src="images/PXL_20241212_183159604.PORTRAIT.jpg" alt="">
+    <img src="images/PXL_20241220_155447464.PORTRAIT.jpg" alt="">
+    <img src="images/PXL_20241224_215637085.jpg" alt="">
+    <img src="images/PXL_20241225_101045400.jpg" alt="">
+    <img src="images/PXL_20241230_193146864.PORTRAIT.jpg" alt="">
+    <img src="images/PXL_20250202_155622927.jpg" alt="">
+    <img src="images/PXL_20250301_153302616.PORTRAIT.jpg" alt="">
+    <img src="images/PXL_20250306_185954333.jpg" alt="">
+    <img src="images/PXL_20250313_205930698.jpg" alt="">
+    <img src="images/PXL_20250322_102051051.PORTRAIT.jpg" alt="">
+    <img src="images/PXL_20250323_090534212.MP.jpg" alt="">
+    <img src="images/PXL_20250330_092321457.PORTRAIT.jpg" alt="">
+    <img src="images/PXL_20250330_145319932.jpg" alt="">
+    <img src="images/PXL_20250526_165802412.PORTRAIT.jpg" alt="">
+    <img src="images/PXL_20250606_082510821.jpg" alt="">
+    <img src="images/PXL_20250625_064514026.jpg" alt="">
+    <img src="images/PXL_20250629_065033423.jpg" alt="">
+    <img src="images/PXL_20250702_175118104.jpg" alt="">
+    <img src="images/PXL_20250706_201313182.jpg" alt="">
+    <img src="images/PXL_20250708_064624939.PORTRAIT.jpg" alt="">
+    <img src="images/PXL_20250708_184243444.NIGHT.jpg" alt="">
+    <img src="images/PXL_20250710_074611290.jpg" alt="">
+    <img src="images/PXL_20250712_062653030.PORTRAIT.ORIGINAL.jpg" alt="">
+    <img src="images/PXL_20250730_200926315.jpg" alt="">
+    <img src="images/PXL_20250801_172821277.jpg" alt="">
+    <img src="images/PXL_20250803_193427438.NIGHT.jpg" alt="">
+</div>
+</body>
+</html>

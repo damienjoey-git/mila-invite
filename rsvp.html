@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RSVP for Mila's Party</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📬</text></svg>">
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #ffe0f0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+      cursor: url('images/pug-cursor-32.png'), auto;
+    }
+
+    .form-container {
+      background: #fff;
+      border-radius: 12px;
+      padding: 30px;
+      max-width: 500px;
+      width: 100%;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      text-align: center;
+      color: #cc3385;
+      margin-bottom: 20px;
+    }
+
+    .guest-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    .guest-row input[type="text"] {
+      flex: 1;
+      padding: 8px;
+      font-size: 16px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+
+    .guest-row select {
+      padding: 6px;
+      font-size: 16px;
+      border-radius: 6px;
+    }
+
+    .remove-btn {
+      background: none;
+      border: none;
+      font-size: 20px;
+      cursor: pointer;
+      color: #cc3385;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      margin-top: 15px;
+      border-radius: 6px;
+      border: none;
+      cursor: pointer;
+    }
+
+    .add-btn {
+      background-color: #ff99cc;
+      color: #4d2b3a;
+    }
+
+    .submit-btn {
+      background-color: #ff66b2;
+      color: white;
+    }
+
+    .submit-btn:hover {
+      background-color: #e0559e;
+    }
+
+    .success {
+      margin-top: 15px;
+      color: green;
+      text-align: center;
+    }
+
+    label {
+      font-weight: bold;
+      margin-top: 10px;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+<div class="form-container">
+  <h2>RSVP for Mila's Birthday</h2>
+  <form id="rsvp-form">
+    <label>Guests</label>
+    <div id="guest-list">
+      <div class="guest-row">
+        <input type="text" name="guest_name[]" placeholder="Guest Name" required>
+        <select name="guest_status[]">
+          <option value="Can make it">✔️ Can make it</option>
+          <option value="Can’t make it">❌ Can’t make it</option>
+        </select>
+        <button type="button" class="remove-btn" onclick="removeGuest(this)">❌</button>
+      </div>
+    </div>
+
+    <button type="button" class="add-btn" id="addGuestBtn">+ Add Another Guest</button>
+    <button type="submit" class="submit-btn">Send RSVP</button>
+    <div id="response" class="success"></div>
+  </form>
+</div>
+
+<script>
+  emailjs.init('LbFAnpkCMP-ZCwiqr'); // Your public key
+
+  document.getElementById('addGuestBtn').addEventListener('click', function () {
+    const guestList = document.getElementById('guest-list');
+    const row = document.createElement('div');
+    row.className = 'guest-row';
+    row.innerHTML = `
+      <input type="text" name="guest_name[]" placeholder="Guest Name" required>
+      <select name="guest_status[]">
+        <option value="Can make it">✔️ Can make it</option>
+        <option value="Can’t make it">❌ Can’t make it</option>
+      </select>
+      <button type="button" class="remove-btn" onclick="removeGuest(this)">❌</button>
+    `;
+    guestList.appendChild(row);
+  });
+
+  function removeGuest(button) {
+    const row = button.parentElement;
+    row.remove();
+  }
+
+  document.getElementById('rsvp-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const names = Array.from(document.getElementsByName('guest_name[]'));
+    const statuses = Array.from(document.getElementsByName('guest_status[]'));
+    const guestSummary = names.map((el, i) => `${el.value}: ${statuses[i].value}`).join('\n');
+
+    const emailParams = {
+      guest_list: guestSummary
+    };
+
+    emailjs.send('service_zpr4vie', 'template_qke99rh', emailParams)
+            .then(() => {
+              document.getElementById('response').textContent = 'RSVP sent successfully! Redirecting...';
+              setTimeout(() => {
+                window.location.href = 'gallery.html';
+              }, 1500);
+            }, (err) => {
+              document.getElementById('response').textContent = 'Something went wrong. Try again.';
+              console.error(err);
+            });
+  });
+</script>
+</body>
+</html>

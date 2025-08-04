@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mila's 11th Birthday Bash</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌸</text></svg>">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, sans-serif;
+      background: linear-gradient(135deg, #ffe0f0, #ffcce2);
+      color: #4d2b3a;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 20px;
+      cursor: url('images/pug-cursor-32.png') 0 0, auto;
+    }
+
+    .card {
+      background: #fff0f6;
+      border-radius: 20px;
+      padding: 50px 40px;
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      max-width: 700px;
+      width: 100%;
+      border: 4px dashed #ff4da6;
+    }
+
+    .title-row {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .title-row h1 {
+      font-size: 48px;
+      font-weight: 900;
+      color: #ff1493;
+      margin: 0;
+      text-transform: uppercase;
+      text-shadow: 1px 1px #ffc0cb;
+    }
+
+    .pug-img {
+      height: 70px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    h2 {
+      font-size: 26px;
+      font-weight: 700;
+      color: #ff66b2;
+      margin-bottom: 30px;
+    }
+
+    .info-list {
+      text-align: left;
+      display: inline-block;
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 20px;
+      color: #5e2c4d;
+    }
+
+    .info-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    .info-icon {
+      font-size: 24px;
+      line-height: 1;
+    }
+
+    .fun-section {
+      margin-top: 30px;
+      font-size: 18px;
+      color: #7a3b5d;
+      font-style: italic;
+      line-height: 1.6;
+    }
+
+    .footer {
+      font-size: 22px;
+      font-weight: bold;
+      color: #cc3385;
+      margin-top: 40px;
+    }
+
+    .footer a {
+      color: #cc3385;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .footer a:hover {
+      text-decoration: underline;
+    }
+
+    .paw {
+      font-size: 26px;
+      margin: 0 8px;
+    }
+
+    #countdown {
+      font-size: 20px;
+      font-weight: bold;
+      color: #d63384;
+      margin: 20px 0 30px;
+    }
+
+    .extras {
+      margin-top: 25px;
+      font-size: 18px;
+      color: #7a3b5d;
+      line-height: 1.6;
+    }
+
+    .extras a {
+      color: #d63384;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .extras a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 600px) {
+      .card {
+        padding: 35px 25px;
+      }
+
+      .title-row h1 {
+        font-size: 36px;
+      }
+
+      h2 {
+        font-size: 22px;
+      }
+
+      .info-list {
+        font-size: 18px;
+      }
+
+      .footer {
+        font-size: 18px;
+      }
+    }
+
+    .balloon {
+      position: fixed;
+      bottom: -100px;
+      animation: floatUp 10s linear infinite;
+      z-index: 1;
+      opacity: 0.7;
+    }
+
+    @keyframes floatUp {
+      0% {
+        transform: translateY(100vh) scale(0.6);
+        opacity: 0;
+      }
+      50% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-100vh) scale(1.2);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="card">
+  <div class="title-row">
+    <h1>Mila is 11!</h1>
+    <img src="images/transparent_pug.png" alt="Pug" class="pug-img">
+  </div>
+
+  <h2>Let’s celebrate 🎉</h2>
+
+  <div class="info-list">
+    <div class="info-item"><span class="info-icon">📅</span>24th August</div>
+    <div class="info-item"><span class="info-icon">🕚</span>11:00 AM – 4:00 PM</div>
+    <div class="info-item"><span class="info-icon">🍔</span>Braai, Burgers and Salads</div>
+    <div class="info-item"><span class="info-icon">📍</span>
+      <a href="https://maps.app.goo.gl/RBiCtez7NgfSpVti8" target="_blank">River Hamble Country Park</a>
+    </div>
+  </div>
+
+  <div id="countdown">⏳ Loading countdown...</div>
+
+  <!-- Weather Widget -->
+  <div class="weather-widget">
+    <a class="weatherwidget-io" href="https://forecast7.com/en/50d91n1d40/southampton/"
+       data-label_1="SOUTHAMPTON"
+       data-label_2="WEATHER"
+       data-theme="original">SOUTHAMPTON WEATHER</a>
+  </div>
+
+  <div class="fun-section">
+    🐶 Dogs welcome (but mustn’t eat the cake)<br>
+    🎩 <strong>Fancy dress hats are <em>mandatory</em> (Mila’s request!)</strong><br>
+    💺 Bring your own chair – two picnic tables are available at the venue<br>
+    🍷 Bring your own alcoholic drinks – soft drinks will be available<br>
+    💷 Parking charges apply<br>
+  </div>
+
+  <div class="extras">
+    📬 Please RSVP by the <strong>10th August</strong><br>
+  </div>
+
+  <div class="footer">
+    <span class="paw">🐾</span>
+    <a href="rsvp.html">RSVP HERE</a>
+    <span class="paw">🐾</span>
+  </div>
+</div>
+
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+<script>
+  // Countdown
+  const countdownEl = document.getElementById('countdown');
+  const eventDate = new Date("August 24, 2025 11:00:00").getTime();
+  const timer = setInterval(() => {
+    const now = new Date().getTime();
+    const diff = eventDate - now;
+    if (diff < 0) {
+      clearInterval(timer);
+      countdownEl.textContent = "🎈 It's Party Time!";
+    } else {
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      countdownEl.textContent = `⏳ ${days} days, ${hours} hours to go!`;
+    }
+  }, 1000);
+
+  // Weather Widget Script
+  !function(d,s,id){
+    var js,fjs=d.getElementsByTagName(s)[0];
+    if(!d.getElementById(id)){
+      js=d.createElement(s);
+      js.id=id;
+      js.src='https://weatherwidget.io/js/widget.min.js';
+      fjs.parentNode.insertBefore(js,fjs);
+    }
+  }(document,'script','weatherwidget-io-js');
+
+  // Confetti
+  window.addEventListener('load', () => {
+    confetti({
+      particleCount: 150,
+      spread: 70,
+      origin: { y: 0.6 }
+    });
+  });
+
+  // Balloons (all pink tones)
+  const colors = ['#ff69b4', '#ff1493', '#ffc0cb', '#ffb6c1']; // All pinks
+  for (let i = 0; i < 20; i++) {
+    const balloon = document.createElement('div');
+    balloon.classList.add('balloon');
+    balloon.textContent = '🎈';
+    balloon.style.left = Math.random() * 100 + 'vw';
+    balloon.style.fontSize = (Math.random() * 20 + 20) + 'px';
+    balloon.style.color = colors[Math.floor(Math.random() * colors.length)];
+    balloon.style.animationDuration = (10 + Math.random() * 10) + 's';
+    document.body.appendChild(balloon);
+  }
+</script>
+</body>
+</html>
