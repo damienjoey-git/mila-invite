@@ -38,20 +38,17 @@
       align-items: center;
       gap: 10px;
       margin-bottom: 12px;
+      flex-wrap: wrap;
     }
 
-    .guest-row input[type="text"] {
-      flex: 1;
+    .guest-row input[type="text"],
+    .guest-row select {
+      flex: 1 1 auto;
       padding: 8px;
       font-size: 16px;
       border-radius: 6px;
       border: 1px solid #ccc;
-    }
-
-    .guest-row select {
-      padding: 6px;
-      font-size: 16px;
-      border-radius: 6px;
+      min-width: 0;
     }
 
     .remove-btn {
@@ -96,6 +93,24 @@
       font-weight: bold;
       margin-top: 10px;
       display: block;
+    }
+
+    @media (max-width: 480px) {
+      .guest-row {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .guest-row input[type="text"],
+      .guest-row select,
+      .remove-btn {
+        width: 100%;
+      }
+
+      .remove-btn {
+        text-align: right;
+        padding-top: 5px;
+      }
     }
   </style>
 </head>

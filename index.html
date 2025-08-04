@@ -14,31 +14,30 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 40px 20px;
+      padding: 30px 15px;
       cursor: url('images/pug-cursor-32.png') 0 0, auto;
     }
 
     .card {
-      background: #fff0f6;
+      background: #ffe6f2; /* softer light pink background */
       border-radius: 20px;
       padding: 50px 40px;
       box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
       text-align: center;
       max-width: 700px;
       width: 100%;
-      border: 4px dashed #ff4da6;
     }
 
     .title-row {
       display: flex;
       justify-content: center;
       align-items: center;
-      gap: 15px;
+      gap: 12px;
       flex-wrap: wrap;
     }
 
     .title-row h1 {
-      font-size: 48px;
+      font-size: 36px;
       font-weight: 900;
       color: #ff1493;
       margin: 0;
@@ -47,22 +46,21 @@
     }
 
     .pug-img {
-      height: 70px;
+      height: 60px;
       border-radius: 50%;
       object-fit: cover;
     }
 
     h2 {
-      font-size: 26px;
+      font-size: 22px;
       font-weight: 700;
       color: #ff66b2;
-      margin-bottom: 30px;
+      margin: 25px 0;
     }
 
     .info-list {
       text-align: left;
-      display: inline-block;
-      font-size: 20px;
+      font-size: 18px;
       font-weight: bold;
       margin-bottom: 20px;
       color: #5e2c4d;
@@ -71,28 +69,28 @@
     .info-item {
       display: flex;
       align-items: center;
-      gap: 10px;
-      margin-bottom: 12px;
+      gap: 8px;
+      margin-bottom: 10px;
+      line-height: 1.4;
     }
 
     .info-icon {
-      font-size: 24px;
-      line-height: 1;
+      font-size: 22px;
     }
 
     .fun-section {
-      margin-top: 30px;
-      font-size: 18px;
+      margin-top: 25px;
+      font-size: 16px;
       color: #7a3b5d;
       font-style: italic;
       line-height: 1.6;
     }
 
     .footer {
-      font-size: 22px;
+      font-size: 20px;
       font-weight: bold;
       color: #cc3385;
-      margin-top: 40px;
+      margin-top: 30px;
     }
 
     .footer a {
@@ -106,20 +104,20 @@
     }
 
     .paw {
-      font-size: 26px;
-      margin: 0 8px;
+      font-size: 24px;
+      margin: 0 6px;
     }
 
     #countdown {
-      font-size: 20px;
+      font-size: 18px;
       font-weight: bold;
       color: #d63384;
       margin: 20px 0 30px;
     }
 
     .extras {
-      margin-top: 25px;
-      font-size: 18px;
+      margin-top: 20px;
+      font-size: 16px;
       color: #7a3b5d;
       line-height: 1.6;
     }
@@ -134,34 +132,13 @@
       text-decoration: underline;
     }
 
-    @media (max-width: 600px) {
-      .card {
-        padding: 35px 25px;
-      }
-
-      .title-row h1 {
-        font-size: 36px;
-      }
-
-      h2 {
-        font-size: 22px;
-      }
-
-      .info-list {
-        font-size: 18px;
-      }
-
-      .footer {
-        font-size: 18px;
-      }
-    }
-
     .balloon {
       position: fixed;
       bottom: -100px;
-      animation: floatUp 10s linear infinite;
+      animation: floatUp 12s linear infinite;
       z-index: 1;
       opacity: 0.7;
+      pointer-events: none;
     }
 
     @keyframes floatUp {
@@ -177,6 +154,37 @@
         opacity: 0;
       }
     }
+
+    @media (max-width: 480px) {
+      .title-row h1 {
+        font-size: 28px;
+      }
+
+      .pug-img {
+        height: 50px;
+      }
+
+      .fun-section, .extras, .footer {
+        font-size: 15px;
+      }
+
+      .info-list {
+        font-size: 16px;
+      }
+
+      .info-icon {
+        font-size: 20px;
+      }
+
+      .card {
+        padding: 30px 20px;
+      }
+
+      #countdown {
+        font-size: 16px;
+      }
+    }
+
   </style>
 </head>
 <body>
